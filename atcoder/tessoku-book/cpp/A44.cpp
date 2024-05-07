@@ -1,0 +1,53 @@
+#include <bits/stdc++.h>
+#include <atcoder/all>
+
+using namespace std;
+using namespace atcoder;
+using ll = long long;
+using ull = unsigned long long;
+
+#define rep(i, a, b) for(ll i=a; i<b; i++)
+#define rrep(i, a, b) for(ll i=a; i>=b; i--)
+#define all(a) (a).begin(), (a).end()
+#define YesNo(bool) if(bool){cout<<"Yes"<<endl;}else{cout<<"No"<<endl;}
+
+template<typename T> inline bool chmax(T &a, T b) { return ((a < b) ? (a = b, true) : (false)); }
+template<typename T> inline bool chmin(T &a, T b) { return ((a > b) ? (a = b, true) : (false)); }
+
+const double pi = 3.141592653589793;
+const ll INF = (ll)1e15;
+
+int main()
+{
+    ll n,q;
+    cin>>n>>q;
+    ll md = 0;
+    auto f = [&](ll pos){
+        if (md){
+            return n-pos-1;
+        }else{
+            return pos;
+        }
+    };
+    vector<ll>a(n);
+    rep(i,0,n)a[i]=i+1;
+    while(q){
+        q--;
+        ll m;
+        cin>>m;
+        if (m==1){
+            ll x,y;
+            cin>>x>>y;
+            x--;
+            a[f(x)] = y;
+        }else if(m==2){
+            md ^= 1;
+        }else{
+            ll x;
+            cin>>x;
+            x--;
+            cout << a[f(x)] << endl;
+        }
+    }
+    return 0;
+}
