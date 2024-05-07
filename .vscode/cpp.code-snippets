@@ -48,15 +48,6 @@
         "description": ""
     }, 
 
-    "Template_py": {
-        "prefix": "tmp_py",
-        "body": [
-            "import sys",
-            "sys.setrecursionlimit(10**5)",
-        ],
-        "description": ""
-    },
-
     "integer_digits_cpp": {
         "prefix": "integer_digits",
         "body": [
