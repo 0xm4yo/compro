@@ -2,7 +2,7 @@
     "version": "3.0.0",
     "configurations": [
         {
-            "name": "C++ Debug unko",
+            "name": "C++ Debug",
             "type": "cppdbg",
             "request": "launch",
             "program": "${fileDirname}/${fileBasenameNoExtension}.out",
