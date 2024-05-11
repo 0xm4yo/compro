@@ -6,4 +6,12 @@
     "code-runner.runInTerminal": true,
     "editor.tabCompletion": "on",
     "editor.snippetSuggestions": "top",
+    "editor.quickSuggestions": {
+        "other": true,
+        "comments": true,
+        "strings": true
+    },
+    "files.associations": {
+        "iostream": "cpp"
+    },
 }
