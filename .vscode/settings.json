@@ -12,6 +12,15 @@
         "strings": true
     },
     "files.associations": {
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "*.tcc": "cpp",
+        "string": "cpp",
+        "unordered_map": "cpp",
+        "unordered_set": "cpp",
+        "string_view": "cpp",
+        "source_location": "cpp",
+        "stacktrace": "cpp",
+        "bitset": "cpp",
+        "format": "cpp"
     },
 }
