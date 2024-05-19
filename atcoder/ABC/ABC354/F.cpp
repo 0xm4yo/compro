@@ -31,34 +31,77 @@ ll coordinate(ll h, ll w, ll W){ return h*W + w; } // 二次元座標を一次�
 
 #define endl "\n" // インタラクティブの時はコメントアウトする
 
+// Coodinate Compression
+// https://youtu.be/fR3W5IcBGLQ?t=8550
+template<typename T=ll>
+struct CC {
+    bool initialized;
+    vector<T> xs;
+    CC(): initialized(false) {}
+    void add(T x) { xs.push_back(x);}
+    void init() {
+        sort(xs.begin(), xs.end());
+        xs.erase(unique(xs.begin(),xs.end()),xs.end());
+        initialized = true;
+    }
+    int operator()(T x) {
+        if (!initialized) init();
+        // lower_bound に修正
+        return lower_bound(xs.begin(), xs.end(), x) - xs.begin();
+    }
+    T operator[](ll i) {
+        if (!initialized) init();
+        return xs[i];
+    }
+    ll size() {
+        if (!initialized) init();
+        return xs.size();
+    }
+};
+
+ll op(ll a, ll b){ return max(a, b); }
+ll e(){ return 0; }
+
 int main()
 {
     ios::sync_with_stdio(false);
     std::cin.tie(nullptr);
     // cout << fixed << setprecision(18);
     
-    ll n;
-    cin>>n;
-    vector<tuple<ll,ll,ll>> arr;
-    rep(i,0,n){
-        ll a,c;
-        cin>>a>>c;
-        arr.push_back({c,a,i});
-    }
-    sort(all(arr));
-    vector<ll> ans;
-    ll mxa = -INF;
-    rep(i,0,n){
-        auto [c,a,idx] = arr[i];
-        if (mxa<=a){
-            ans.push_back(idx);
-            chmax(mxa, a);
+    ll t;
+    cin>>t;
+    while(t--){
+        ll n;
+        cin>>n;
+        vector<ll>a(n);
+        rep(i,0,n)cin>>a[i];
+        CC<ll> cc;
+        rep(i,0,n)cc.add(a[i]);
+        
+        segtree<ll,op,e> seg(n);        
+        vector<ll> arr(n);
+        rep(i,0,n){
+            ll idx = cc(a[i]);
+            ll mx = seg.prod(0,idx);
+            seg.set(idx, mx+1);
+            arr[i] = mx+1;
         }
-    }
-    sort(all(ans));
-    cout << ans.size() << endl;
-    for (auto aa: ans) cout << aa+1 << endl;
+        ll l = seg.all_prod();
 
+        segtree<ll,op,e> seg2(n);
+        vector<ll> ans;
+        rrep(i,n-1,0){
+            ll idx = cc(a[i]);
+            ll mx = arr[i];
+            ll right = seg2.prod(idx+1,n);
+            if (right + mx == l) ans.push_back(i);
+            seg2.set(idx, right + 1);
+        }
+        reverse(all(ans));
+        cout << ans.size() << endl;
+        for (auto aa: ans) cout << aa+1 << " ";
+        cout << endl;
+    }
     
     return 0;
 }
