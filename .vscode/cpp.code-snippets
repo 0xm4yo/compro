@@ -717,7 +717,7 @@
             "            int remh = hh%h;",
             "            int remw = ww%w;",
             "            res += cum[remh][w] * (ww/w);",
-            "            res += cum[h][remw] * (hh/w);",
+            "            res += cum[h][remw] * (hh/h);",
             "            res += cum[remh][remw];",
             "            return res;",
             "        };",
