@@ -4,11 +4,12 @@
         "python": "python -u"
     },
     "code-runner.runInTerminal": true,
+    "editor.snippetSuggestions": "inline",
+    "editor.suggestSelection": "recentlyUsed",
     "editor.tabCompletion": "on",
-    "editor.snippetSuggestions": "top",
-    "editor.quickSuggestions": {
-        "other": true,
-        "comments": true,
-        "strings": true
-    },
+    // "editor.quickSuggestions": {
+    //     "other": true,
+    //     "comments": false,
+    //     "strings": false
+    // },
 }
