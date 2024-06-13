@@ -3,8 +3,8 @@
         {
             "name": "compro-devcontainer",
             "includePath": [
-                "${workspaceFolder}",
-                "${workspaceFolder}/ac-library"
+                "${workspaceFolder}/ac-library",
+                "/usr/include/c++/13"
             ],
             "compilerPath": "/usr/bin/g++",
             "cppStandard": "c++20",
