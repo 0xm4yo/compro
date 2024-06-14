@@ -12,4 +12,13 @@
     //     "comments": false,
     //     "strings": false
     // },
+    "C_Cpp.intelliSenseEngine": "disabled",
+    "C_Cpp.errorSquiggles": "disabled",
+    "C_Cpp.autocomplete": "disabled",
+    
+    "clangd.path": "/usr/bin/clangd",
+    "clangd.arguments": [
+        "--header-insertion=never",
+        // "-log=verbose"
+    ],
 }
