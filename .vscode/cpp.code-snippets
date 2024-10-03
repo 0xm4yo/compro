@@ -32,6 +32,7 @@
             "const vector<int> DY = { 0, 1, 0, -1 };",
             "const long long INF = 4004004003104004004LL; // (int)INF = 1010931620;",
             "ll coordinate(ll h, ll w, ll W){ return h*W + w; } // 二次元座標を一次元座標に変換",
+            "ll dist2(ll x1, ll y1, ll x2, ll y2){ return (x1-x2)*(x1-x2) + (y1-y2)*(y1-y2); }",
 			"",
             "#define endl \"\\n\" // インタラクティブの時はコメントアウトする",
             "",

@@ -6,12 +6,13 @@
     "dockerFile": "../Dockerfile",
 
     // Install additional extensions for VS Code
-    "customizations": {       
+    "customizations": {
         "vscode": {
             "extensions": [
                 "ms-vscode.cpptools",
                 "ms-python.python",
                 "formulahendry.code-runner",
+                "llvm-vs-code-extensions.vscode-clangd"
             ]
         }
     }

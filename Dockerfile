@@ -14,20 +14,12 @@ RUN apt-get update && \
     python3 \
     python3-pip \
     python3-dev \
+    clangd \
     git \
     openssh-client && \
     rm -rf /var/lib/apt/lists/*
 
-# Add GitHub to known hosts
-RUN mkdir -p /root/.ssh && \
-    touch /root/.ssh/known_hosts && \
-    ssh-keyscan github.com >> /root/.ssh/known_hosts
+RUN git config --global core.autocrlf true
 
 # Set up a working directory
 WORKDIR /workspace
-
-# Set the default shell to bash
-SHELL ["/bin/bash", "-c"]
-
-# Set the default command to bash shell
-CMD ["/bin/bash"]
