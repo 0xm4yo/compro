@@ -20,6 +20,3 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 RUN git config --global core.autocrlf true
-
-# Set up a working directory
-WORKDIR /workspace
