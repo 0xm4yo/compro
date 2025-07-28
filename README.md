@@ -1,4 +1,4 @@
-# competitive programming submission code
+# Competitive programming submission code
 
 ## Language
 
