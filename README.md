@@ -4,6 +4,3 @@
 
 - C++
 - Python3
-
-## Note
-https://scrapbox.io/yp-ww/
