@@ -1,5 +1,4 @@
-# Competitive Programming
- yp-ww's competitive programming submission code
+# competitive programming submission code
 
 ## Language
 
